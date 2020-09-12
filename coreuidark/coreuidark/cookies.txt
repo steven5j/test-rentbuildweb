@@ -1,0 +1,4 @@
+# HTTrack Website Copier Cookie File
+# This file format is compatible with Netscape cookies
+.coreui.io	TRUE	/	FALSE	1999999999	__cfduid	d21ed8d40b0f55adf0ec61eec4b42275e1566352629
+

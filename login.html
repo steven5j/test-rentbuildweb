@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="./css/bootstrap.css">
+  <link rel="stylesheet" href="css/fontawesome.css" />
+  <style>
+    .sign-up-box {
+      background: #12375B;
+      color: #fff;
+
+    }
+
+    .login-box {
+      box-shadow: 0px 0px 3px #343a40;
+    }
+
+    .login-body-bg {
+      background-image: url(img/login-body-img.jpg);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      filter: opacity(.2);
+    }
+
+    .login-bode-bg-contain {
+      position: fixed;
+      top: 0px;
+      left: 0px;
+    }
+  </style>
+</head>
+
+<body class=" mx-0 my-0 ">
+  <div class="login-body-bg vw-100 vh-100"></div>
+  <div class="login-bode-bg-contain vh-100 vw-100">
+    <div class="container flex-row align-items-center vh-100 vw-100  ">
+
+      <div class="row justify-content-center align-items-center h-100 w-100 ">
+        <div class="col-12  col-lg-10 h-75 row justify-content-center  bg-light px-0 login-box">
+          <div class="col-7 px-0 d-flex align-items-center">
+            <div class="card-body">
+              <div class="text-center"><img src="https://picsum.photos/id/684/100/100" alt=""></div>
+              <br />
+              <h3 class="card-title text-center">Sign In</h5>
+                <p class="card-text text-center">輸入您的帳號和密碼以登入查看使用。</p>
+                <br />
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">
+                      <i class="fas fa-user"></i>
+                    </span>
+                  </div>
+                  <input type="text" class="form-control" placeholder="Username" aria-label="Username"
+                    aria-describedby="basic-addon1">
+                </div>
+
+                <div class="input-group mb-4">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">
+                      <i class="fas fa-lock"></i>
+                    </span>
+                  </div>
+                  <input class="form-control" type="password" placeholder="Password" aria-label="Password"
+                    aria-describedby="basic-addon2">
+                </div>
+                <br />
+                <div class="row">
+                  <div class="col-6">
+                    <button class="btn btn-primary px-4" type="button">Login</button>
+                  </div>
+                  <div class="col-6 text-right">
+                    <button class="btn btn-link px-0" type="button">忘記密碼?</button>
+                  </div>
+
+
+                </div>
+            </div>
+
+          </div>
+          <!-- 註冊 -->
+          <div class="col-5 px-0 sign-up-box d-flex align-items-center border-0">
+            <div class="card-body">
+              <h3 class="card-title text-center">Sign Up</h5>
+                <br />
+                <div class="text-center">
+                  <button class="btn btn-primary px-4  " type="button">現在註冊!</button>
+                </div>
+
+
+            </div>
+          </div>
+
+
+
+        </div>
+
+
+
+      </div>
+    </div>
+    <script src="./js/jquery-3.4.1.min.js"></script>
+    <script src="./js/popper.min.js"></script>
+    <script src="./js/bootstrap.js"></script>
+
+</body>
+
+</html>

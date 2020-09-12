@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- bootstrap -->
+  <link rel="stylesheet" href="css/bootstrap.css" />
+  <!-- fontawesome -->
+  <link rel="stylesheet" href="css/fontawesome.css" />
+  <!--animate  -->
+  <link rel="stylesheet" href="css/animate.css" />
+  <title>Document</title>
+  <style>
+       /* --------------------blank start--------------------------------- */
+    .bg-gainsboro {
+      background: gainsboro;
+    }
+
+    .bg-img-sea {
+      background-image: url(img/sea.jpg);
+      filter: grayscale(90%);
+      opacity: 0.8;
+    }
+
+    .img-user {
+      background-image: url(https://picsum.photos/600/400);
+      height: 32px;
+      width: 32px;
+      border-radius: 50%;
+      display: inline-block;
+      margin: -1px;
+      overflow: hidden;
+      position: relative;
+      padding: 10px;
+      border: 3px solid #6458C2;
+    }
+    .img-user.aa{
+  width: 70px; 
+  height: 70px;
+  display: block;
+  margin: 10px auto;
+    }
+
+    .sidebar {
+      overflow-y: auto;
+      overflow-x: hidden;
+      width: 80px;
+      transition: width 0.2s ease-in-out 0s;
+      background: #1F4F6E;
+    }
+    .sidebar-items{
+      transition: background .1s ease-in-out;
+      position: relative;
+    }
+    .sidebar-items:target::before{
+content: "";
+position: absolute;
+width:14px;
+height: 14px;
+top:49px;
+left:5px;
+transform:rotate(45deg);
+background: rgba(45, 52, 128, .5);
+    }
+    .sidebar-items:hover{
+      background: rgba(45, 52, 128, .3);
+    }
+    .sidebar-items:target{
+      background: rgba(45, 52, 128, .5);
+    }
+    .sidebar-items:target .sidebar-dropdown-items{
+max-height: 1500px;
+background: rgba(0, 0, 0, .5);
+    }
+
+    /* .sidebar-dropdown-menu-toggle {
+      transition: background .1s ease-in-out;
+    } */
+
+    .sidebar-dropdown-items {
+      max-height: 0px;
+      padding: 0;
+      margin: 0;
+      overflow-y: hidden;
+      transition: max-height 0.2s ease-in-out 0s;
+    }
+    .sidebar-dropdown-items a {
+display: block;
+position: relative;
+    }
+    .sidebar-dropdown-items a::before {
+content: "";
+      position: absolute;
+      width: 6px;
+      height: 80%;
+      background:#f8f9fa;
+top:10%;
+      left:0px;
+      transition: 0.3s;
+      opacity: 0;
+    }
+    .sidebar-dropdown-items a:hover::before {
+      opacity: 1;
+    }
+
+
+
+    /* .dropdown-open {
+      background: rgba(0, 0, 0, .5);
+    }
+
+    .dropdown-open>.sidebar-dropdown-items {
+      max-height: 1500px;
+    } */
+
+    .sidebar p {
+      display: none;
+    }
+
+    .sidebar i,
+    .sidebar p {
+      display: inline;
+      color:#f8f9fa;
+      font-weight: 900;
+    }
+
+
+    .sidebar-items-icon {
+      font-size: 1.5rem;
+      width: 80px;
+
+      display: inline-table;
+      text-align: center;
+      vertical-align: middle;
+      padding: 10px;
+    }
+
+    .sidebar li ul li .sidebar-items-icon {
+      font-size: 1rem;
+    }
+
+    .main {
+      float: right;
+      width: calc(100% - 80px);
+    }
+
+    .top-bar {
+      width: 100vw;
+      height: 100px;
+      background: #B3C8CF;
+      overflow: hidden;
+    }
+
+    .logo-brand {
+      background: #12375B;
+      width: 250px;
+      height: 100%;
+
+    }
+
+    /* .sidebar-menu-button {
+      width: 50px;
+      height: 100%;
+      background: #1F4F6E;
+      cursor: pointer;
+    } */
+
+    .Breadcrumb-bar {
+      width: 100%;
+      height: 100px;
+
+    }
+
+
+    #user-menu-button{
+      cursor: pointer;
+    }
+    #user-menu-button:hover{
+      transform: scale(1.1);
+    }
+    .user-dropdown-menu {
+    font-size: 1rem;
+    position: absolute;
+    z-index: 1000;
+    top: 80px;
+    display: none;
+    min-width: 200px;
+    margin: .125rem 1rem 0;
+    padding: .5rem 0;
+    list-style: none;
+    text-align: left;
+    color: #525f7f;
+    border: 0 solid rgba(0,0,0,.15);
+    border-radius: .4375rem;
+    background-color: #fff;
+    background-clip: padding-box;
+    box-shadow: 0 50px 100px rgba(50,50,93,.1), 0 15px 35px rgba(50,50,93,.15), 0 5px 15px rgba(0,0,0,.1);
+}
+    /* .user-dropdown-menu.show {
+    pointer-events: auto;
+    display: block;
+    opacity: 1;
+} */
+
+.transform-rotate-180deg{
+  transform:rotate(180deg);
+  transition: transform 0.2s ease-in 0s;
+}
+.transform-rotate-0deg{
+  transform:rotate(0deg);
+  transition: transform 0.2s ease-in 0s;
+}
+/* --------------------blank end--------------------------------- */
+  </style>
+
+</head>
+
+<body class="mx-0 my-0 bg-gainsboro">
+
+
+  
+      <!-- /* --------------------blank start---------------------------------  -->
+  <div class="container-fluid vh-100 vw-100 py-0 px-0 mx-0">
+    <div class="top-bar d-flex align-items-center">
+      <div class="logo-brand d-flex justify-content-center align-items-center">
+        <a class="navbar-brand" href="#">
+<div class="d-inline-block">
+         <img src="img/eagle_logo2.png"   height="60px" alt="">
+        </div>
+        
+        </a>
+
+      </div>
+
+      
+      
+      <div id="user-menu-button" class=" ml-auto mr-3 d-flex align-items-center ">
+
+        <span class="img-user mx-2">
+        </span>
+        <p class="mb-0">Username</p>
+        <span class="mx-3"><i class="fas fa-chevron-circle-down"></i>
+
+      </div>
+              <!--  -->
+              <div class="user-dropdown-menu dropdown-menu-right text-left">
+                  <div class="dropdown-header noti-title bg-primary">
+                      <div class="d-block text-center">
+                    <h5 class="text-overflow m-0 " style="color:#f8f9fa">Account</h5>
+                    </div>
+                  </div>
+                  <div class="img-user aa" >
+                  </div>
+                  <div class="d-block text-center">
+                  <a class="bg-bg-secondary" style="color:#007bff;">Username</a>
+                </div>
+                <div class="dropdown-divider"></div>
+                  <a href="#!" class="dropdown-item">
+                      <span class="col-1 d-inline-flex"><i class="far fa-address-card"></i></span>
+                    <span class="col-auto text-left d-inline-block">profile</span>
+     
+                  </a>
+                  <a href="#!" class="dropdown-item">
+                      <span class="col-1 d-inline-flex"><i class="fas fa-user-cog"></i></span>
+                    <span class="col-auto text-left d-inline-block" >Settings</span>
+                  </a>
+                  <a href="#!" class="dropdown-item">
+                      <span class="col-1 d-inline-flex"><i class="fas fa-envelope-square"></i></span>
+                    <span class="col-auto text-left d-inline-block">Messagee</span>
+                  </a>
+                  <div class="dropdown-divider"></div>
+                  <a href="#!" class="dropdown-item">
+                      <span class="col-1 d-inline-flex"><i class="fas fa-sign-out-alt"></i></span>
+                    <span class="col-auto text-left d-inline-block">Logout</span>
+                  </a>
+                </div>
+            <!--  -->
+    </div>
+
+
+
+    <!-- 上面橫槓 end -->
+
+    <!-- sidebar start -->
+
+    <!-- <div class=" w-25 h-100 ">
+      <div class="w-50   h-100">
+        <div class=" h-100 w-100 mx-0  "> -->
+
+    <ul class="nav sidebar flex-column  align-items-center position-fixed vh-100">
+
+      <li class="nav-item vw-100 sidebar-items">
+        <a class="" href="#">
+          <span class="sidebar-items-icon"><i class="fas fa-bullhorn"></i></span>
+          <p>公告消息</p>
+
+        </a>
+      </li>
+      <li class="nav-item vw-100 sidebar-items">
+        <a class="" href="#">
+          <span class="sidebar-items-icon"><i class="fas fa-building"></i></span>
+          <p>物件管理</p>
+        </a>
+      </li>
+
+      <li class="nav-item vw-100 sidebar-items" id="RM">
+        <a class=" " href="#RM ">
+          <span class="sidebar-items-icon"><i class="fas fa-clipboard"></i></span>
+          <p>報表管理<i class="fas fa-angle-left"></i></p>
+
+        </a>
+        <ul class="px-0 sidebar-dropdown-items flex-row w-100">
+
+          <li class="nav-item ">
+            <a class="" href="#">
+              <span class="sidebar-items-icon"><i class="fab fa-searchengin"></i> </span>
+              <p>報表查看</p>
+            </a>
+          </li>
+          <li class="nav-item ">
+            <a class="" href="#">
+              <span class="sidebar-items-icon"><i class="fas fa-pen-alt"></i></span>
+              <p>報表編輯</p>
+            </a>
+          </li>
+
+
+
+        </ul>
+      </li>
+      <li class="nav-item  vw-100 sidebar-items" id="PM">
+        <a class="" href="#PM">
+          <span class="sidebar-items-icon"><i class="fas fa-address-book"></i></span>
+          <p>人員管理系統<i class="fas fa-angle-left"></i></p>
+
+        </a>
+        <ul class="px-0 sidebar-dropdown-items flex-row">
+
+          <li class="nav-item">
+            <a class="" href="index.html">
+              <span class="sidebar-items-icon"> <i class="fas fa-sitemap"></i></span>
+              <p>組織管理</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="" href="index.html">
+              <span class="sidebar-items-icon"> <i class="fas fa-sitemap"></i></span>
+              <p>權限管理</p>
+            </a>
+          </li>
+
+        </ul>
+      </li>
+
+
+    </ul>
+
+
+    <!-- </div>
+      </div>
+    </div> -->
+    <!-- sidebar end -->
+    <!-- /* --------------------blank end---------------------------------  -->
+
+    <div class="main">
+      <!-- 麵包屑 (Breadcrumb) -->
+      <div class="Breadcrumb-bar d-flex align-items-center border-bottom">
+
+        <h1 class="px-5">Title</h1>
+        <h4 class="px-4"><i class="fas fa-home"></i> Dashbords / News</h4>
+      </div>
+
+      <!-- 麵包屑 (Breadcrumb) end -->
+    </div>
+
+
+  </div>
+  </div>
+  <!-- jquery 載入 -->
+  <script src="./js/jquery-3.4.1.min.js"></script>
+  <!-- bootstrap-->
+  <script src="./js/popper.min.js"></script>
+  <script src="./js/bootstrap.js"></script>
+
+  <!-- 一般javascript jquery 載入  -->
+  <script>
+    //  sidebar 項目開關
+    setInterval(function () {
+      // $('.sidebar-dropdown-menu-toggle').click(function () {
+      //   $(this).addClass('dropdown-open');
+      // })
+      // $('.dropdown-open').click(function () {
+      //   $(this).removeClass('dropdown-open');
+      // });
+
+    });
+
+// 
+//     var cc=0;
+//     if(cc == 0){
+//     $('.sidebar-menu-button').click(function () {
+//         $('.sidebar').css('width', '250px');
+//         $('.sidebar p').fadeIn(100);
+//         cc=1;
+//       });
+// }
+// else{
+//       $('.sidebar-menu-button').click(function () {
+//         $('.sidebar').css('width', '80px');
+//         $('.sidebar p').fadeOut(100);
+//         cc=0;
+//       });
+// }
+// 
+
+    $('.sidebar').mouseover(function () {
+      $(this).css('width', '250px');
+      $('.sidebar p').fadeIn(100);
+    });
+
+    $('.sidebar').mouseleave(function () {
+      $(this).css('width', '80px')
+      $('.sidebar p').fadeOut(100);
+    });
+
+    // $('#user-menu-button').click(function () {
+    //     $('.user-dropdown-menu').fadeToggle(200);
+    //     $('.fa-chevron-circle-down').toggleClass('transform-rotate-180deg')
+    // });
+
+    $('#user-menu-button').on('click',function(){
+      $('.user-dropdown-menu').fadeToggle(200);
+      if( $('.fa-chevron-circle-down').hasClass('transform-rotate-180deg')){
+        $('.fa-chevron-circle-down').toggleClass('transform-rotate-0deg');
+        $('.fa-chevron-circle-down').removeClass('transform-rotate-180deg');
+      }else{
+        $('.fa-chevron-circle-down').toggleClass('transform-rotate-180deg');
+        $('.fa-chevron-circle-down').removeClass('transform-rotate-0deg');
+      }});
+
+  </script>
+</body>
+
+</html>

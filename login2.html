@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+<style>
+    body{
+        margin:0px;
+    }
+.content{
+display: flex;
+align-items: center;
+justify-content: center;
+margin: auto;
+width: 90vw;
+height: 100vh;
+    }
+.loginbox{
+    background-color: bisque;
+    width: 400px;
+    height: 600px;
+box-shadow: 0px 0px 10px #000;
+border-radius: 5px;
+position:fixed;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+}
+.logo{
+float: left;
+position: absolute;
+top:60px;
+}
+.acc > span{
+border: 1px solid #000;
+font-size: 1rem;
+padding: 6px;
+}
+.accipt{
+margin:230px auto 10px auto;
+border: 1px solid #000;
+font-size: 1rem;
+padding: 5px;
+}
+.pwd > span{
+    border: 1px solid #000;
+font-size: 1rem;
+padding: 6px;
+width:2.5rem;
+}
+.pwdipt{
+    margin:10px auto ;
+border: 1px solid #000;
+font-size: 1rem;
+padding: 5px;
+}
+
+
+/* 登入安紐 style--------------------------------------- */
+.btn{
+  text-align: center;
+  margin: 50px auto ;
+  line-height: 40px;
+  width:200px;
+  height:40px;
+  transition: 0.3s;
+  border: 2px solid orangered;
+  background-color:white;
+  position: relative; 
+  cursor: pointer;
+  overflow:hidden;
+}
+.btn span{
+  color:orangered;
+  z-index:1; 
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transition: 0.3s;
+}
+.btn span:hover{
+  color:white;
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;   
+}
+.btn::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  background-color:orangered;
+  transition: 0.3s;
+  transform: scale(0, 1);
+}
+.btn:hover::before{
+  opacity: 1;
+  transform: scale(1, 1);
+}
+.btn::after{
+  content: "";
+  background-color: white;
+  display: block;
+  position:absolute;
+  top: -65px;
+  left: 0px;
+  width: 100%;
+  height: 400%;
+  border-radius: 50%;
+  opacity: 0;
+  transition: 0.3s
+}
+.btn:active::after{
+  position:absolute;
+  top: 25px;
+  left: 100px;
+  width: 0%;
+  height: 0%;
+  opacity: 1;
+  transition: 0s
+}
+
+/* 登入安紐 style end--------------------------------------- */
+</style>
+</head>
+<body>
+    <div class="content">
+    <div class="loginbox">
+        <div class="logo"><img src="https://picsum.photos/320/200" alt=""></div>
+        <div class="acc"><span>帳號</span><input class="accipt" type="acc" maxlength="15" size="15"  value=""placeholder="Username"></div>
+        <div class="pwd"><span>密碼</span><input class="pwdipt" type="password" maxlength="15" size="15"placeholder="Password"></div>
+        <div class="btn"><span>LOGIN</span></div>
+    </div>
+</div>
+
+</body>
+</html>

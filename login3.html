@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <style>
+      #cardbox{
+        box-shadow: 0px 0px 3px #343a40;
+      }
+    </style>
+</head>
+
+<body class="bg-light mx-0 my-0">
+    <div class="container flex-row align-items-center  vh-100 vw-100">
+
+        <div class="row justify-content-center align-items-center h-100 w-100 ">
+            <div class="col-12  col-lg-5 " >
+                <div class="card" id="cardbox">
+                <img class="card-img-top" src="https://picsum.photos/400/150" alt="LOGO">
+                    <div class="card-body">
+                        <h3 class="card-title text-center">Sign In</h5>
+                        <p class="card-text text-center">輸入您的帳號和密碼已登入查看使用。</p>
+                        <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text">
+                                    <i class="icon-user">帳號</i>
+                                  </span>
+                                </div>
+                                <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+                              </div>
+
+                              <div class="input-group mb-4">
+                                    <div class="input-group-prepend">
+                                      <span class="input-group-text">
+                                        <i class="icon-lock">密碼</i>
+                                      </span>
+                                    </div>
+                                    <input class="form-control" type="password" placeholder="Password" aria-label="Password" aria-describedby="basic-addon2">
+                                  </div>
+
+                                  <div class="row">
+                                        <div class="col-6">
+                                          <button class="btn btn-primary px-4" type="button">Login</button>
+                                        </div>
+                                        <div class="col-6 text-right">
+                                          <button class="btn btn-link px-0" type="button">忘記密碼?</button>
+                                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <script src="./js/jquery-3.4.1.min.js"></script>
+        <script src="./js/popper.min.js"></script>
+        <script src="./js/bootstrap.js"></script>
+</body>
+
+</html>

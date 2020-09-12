@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<!--CSS RESET-->
+<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+<title>富裕資產物業管理</title>
+
+<!-- bootstrap -->
+<link rel="stylesheet" href="css/bootstrap.css" />
+<!-- fontawesome -->
+<link rel="stylesheet" href="css/fontawesome.css" />
+<!--animate  -->
+<link rel="stylesheet" href="css/animate.css" />
+<!-- Chart.css -->
+<link rel="stylesheet" href="css/Chart.min.css">
+<!-- google fonts -->
+<link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap" rel="stylesheet">
+<style>
+body {
+font-family: 'Noto Sans TC', sans-serif;
+}
+
+.top-bar {
+width: 100%;
+height: 100px;
+overflow: hidden;
+}
+
+.object-fit-cover {
+object-fit: cover;
+}
+
+.object-fit-contain {
+object-fit: contain;
+}
+
+.object-position-center {
+object-position: center;
+}
+.bg-picture1{
+    background-image: url(./img/2385930.jpg) ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top left;
+}
+.bg-picture2{
+    background-image: url(./img/2799334.jpg) ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top left;
+}
+
+.bg-picture3{
+    background-image: url(./img/home7.jpg) ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+#index_navbar .nav-link.active {
+    border: 1px solid #f1cfa5;
+    animation: active 2s infinite ease-in alternate forwards;
+}
+
+/* 選單底線效果 */
+ul.menu-bottomline-effect {
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -ms-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+}
+.menu-bottomline-effect a {
+    display: inline-block;
+    position: relative;
+    transition: color 0.35s ease;
+    /* 底線間距 */
+    padding-bottom: 0.5rem;
+}
+.menu-bottomline-effect a:before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 1px;
+    width: 0;
+    transition: width 0s ease, background 0.35s ease;
+}
+.menu-bottomline-effect a:after {
+    content: '';
+    display: block;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    height: 1px;
+    width: 0;
+    background: #f1cfa5;
+    transition: width 0.35s ease;
+}
+.menu-bottomline-effect a:hover:before {
+    width: 100%;
+    background: #f1cfa5;
+    transition: width 0.35s ease;
+}
+.menu-bottomline-effect a:hover:after {
+    width: 100%;
+    background: transparent;
+    transition: all 0s ease;
+}
+/* 選單底線效果 end */
+
+/* jQuery文字翻转动画特效插件 .textyleF*/
+/*code sample from here*/
+/*
+[required code]
+parent {
+  opacity: 0;
+  perspective: xxx; //3d effective dose
+}
+parent span {
+  //flip effect
+  transform : rotateY(xxxdeg);  //you can also use 'rotateX' together.  
+	(transform-origin : xxx;) //If you want.  
+  //fade effect
+  opacity: 0;
+}
+*/
+
+.textyleF.ex1 {
+  opacity: 0;
+  perspective: 200px;
+  font-weight: 900;
+  letter-spacing: .3rem;
+  color: #2f1700;
+}
+.textyleF.ex1 span {
+  transform: rotateY(-90deg);
+  opacity: 0;
+  letter-spacing: .3rem;
+}
+
+.textyleF.ex2 {
+  opacity: 0;
+  perspective: 200px;
+  font-weight: 900;
+  letter-spacing: .3rem;
+  color: #2f1700;
+}
+.textyleF.ex2 span {
+  transform: rotateY(-90deg) rotateX(45deg);
+  transform-origin: -50% 75%;
+  opacity: 0;
+  letter-spacing: .3rem;
+}
+
+.textyleF.desc {
+  padding: 1rem;
+  font-size: 1rem;
+  letter-spacing: .2rem;
+  opacity: 0;
+  transition: 2s 1.5s;
+}
+/* jQuery文字翻转动画特效插件 end*/
+
+.home-title-position{
+  position: absolute;
+  right: 15%;
+  top:55%;
+  left: 15%;
+  z-index: 10;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: #2f1700;
+  text-align: center;
+  transform:translateY(-50%);
+  font-weight: 900;
+  
+}
+.home-title-position.title3{
+background:linear-gradient(to right,transparent 0%,rgba(0,0,0,0.3) 80%,transparent 100%);
+}
+</style>
+</head>
+
+<body class=" m-0">
+<div class="container-fluid vh-100 mx-0 p-0">
+<!-- 導覽列區 ------------------------------------------------------------------------------------------- -->
+
+        <header id="index_navbar" class="navbar navbar-expand-lg navbar-dark bg-light fixed-top row position-fixed">
+                <div class="col-5">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto menu-bottomline-effect">
+
+                        <li class="nav-item ">
+                            <a class="nav-link text-dark" href="#section02"><i class="fas fa-child"></i>幸福房客</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="#section03"><i class="fab fa-keybase"></i>房東託管</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="#section04"><i class="fas fa-poll"></i>服務內容</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="#section05"><i class="fas fa-lightbulb"></i>經營理念</a>
+                        </li>
+                    </ul>
+</div></div>
+<div class="col-2 text-center logo">
+                    <a class="navbar-brand text-dark" href="#section01"><img src="./img/eagle_logo.svg" alt="富裕資產物業管理"" width="40"/>資產物業管理</a>
+
+                </div>
+
+                    <div class="col-5 d-flex justify-content-end"><a href="login.php">會員登入</a></div>
+
+
+            </header>
+
+            <!-- 輪播圖區 section01 --------------------------------------------------------------------------------- -->
+            <section id="section01"  class="vh-100 mt-5 mt-lg-0">
+                    <div id="carouselExampleIndicators" class="carousel slide vh-100" data-ride="carousel" data-interval="5000">
+                        <ol class="carousel-indicators">
+                            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                        </ol>
+
+                        <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
+                        <div class="carousel-inner vh-100">
+                            <div class="carousel-item active w-100 vh-100">
+                                <img src="./img/home1.jpg" class="d-block w-100 h-100 object-fit-cover object-position-center" 
+                                alt="輪播圖01" />
+                                <div class="home-title-position  d-md-block ">
+                                        <h1 class="textyleF ex1 ">租屋行家，幸福生活</h1>
+                                        <h1 class="textyleF ex2">專業託管</h1>
+                                        <h1 class="textyleF desc">- 簡單 專業 豐盛 -</h1>
+                                      </div>
+                            </div>
+                            <div class="carousel-item w-100 vh-100">
+                                <img src="./img/home2.jpg" class="d-block w-100 h-100 object-fit-cover object-position-center" alt="輪播圖02" />
+                                <div class="home-title-position d-md-block text-left" style="left:23%; color:#10003b;" >
+                                        <h1 class="animated fadeInDown"style="font-weight: 900;">專業房東託管</h1>
+                                        <h2 class="animated fadeInDown delay-1s"style="font-weight: 900;">視如己屋，房東安心託付</h2>
+                                      </div>
+                            </div>
+                            <div class="carousel-item w-100 vh-100">
+                                <img src="./img/home3.jpg" class="d-block w-100  h-100 object-fit-cover object-position-center" alt="輪播圖03" />
+                                <div class="home-title-position title3  d-none d-md-block text-right"style="right:20%; color:#fafafa;">
+                                        <h1 class="animated fadeInUp"style="font-weight: 900;">幸福房客租屋處</h1>
+                                        <h2 class="animated fadeInUp delay-1s"style="font-weight: 900;">找到回家的溫暖，找回舒適的感受</h2>
+                                      </div>
+                            </div>
+
+                        </div>
+                    </div>
+                        <a class="carousel-control-prev" href="#carouselExampleIndicators" data-slide="prev">
+                            <span class="carousel-control-prev-icon"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselExampleIndicators" data-slide="next">
+                            <span class="carousel-control-next-icon"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                </section>
+
+            </div>
+            <section id="section02"  class="bg-picture1">
+                    <div class="container vh-100 w-100  d-flex  align-items-center">
+                            <div class="card shadow rounded p-4 bg-light wow animated fadeInLeft" style="width: 400px;">
+                                    <h1 class="card-title border-bottom pb-3">幸福房客</h1>
+                <div class="card-text">優質的服務，完全合法合規的評測檢定，幫您檢測，完整的客戶處理規劃，專業的修繕工班，讓你租一個好窩，給你一個家的感受！</div>
+                            </div>
+                
+                            </div>
+</section>
+
+<div id="section03" class="bg-picture2">
+        <div class="container vh-100 w-100  d-flex flex-row-reverse align-items-center">
+            <div class="card shadow rounded p-4 bg-light wow animated fadeInRight" style="width: 400px;">
+                    <h1 class="card-title border-bottom pb-3">房東託管</h1>
+<div class="card-text">安心收租，專業的事，交給專業的來處理，貼心的服務，安心滿意的服務體驗，讓我們管理你的收租房。提供完整的報表，與租客相關資訊，您只需要在家即可瞭解您房屋的出租狀況~!。</div>
+            </div>
+
+            </div>
+</div>
+
+
+
+
+<div id="section04" class="container-fluid vh-100 w-100 ">
+   <h1 class="text-center pt-3 pb-lg-4"> 服務內容</h1>
+        <div class="row flex-column  flex-md-row">
+<div class="col-md-3 col">
+<div class="card my-4 shadow rounded  wow animated fadeIn" style=" height: 500px; " data-toggle="modal" data-target=".bd-example-modal-xl-5">
+        <div class="w-100  position-relative" style="height:200px">
+        <img src="./img/14910.jpg" class="w-100 h-100 object-fit-cover object-position-center " alt="">
+
+        <h2 class="card-title text-light bg-dark position-absolute px-1 " style="transform: translate(-50%, -50%);top:50%;left:50%">
+                代租代管
+</h2>
+        </div>
+        <div class="card-body d-flex flex-column justify-content-center  align-items-center">
+
+        <div class="row flex-column justify-content-between align-items-center">
+                <h5 class="col">百萬系統</h5>
+                <h5 class="col">保全連線</h5>
+                <h5 class="col">安心回報</h5>
+                <h5 class="col">法律顧問</h5></div>
+        </div>
+        </div>
+    </div>
+    <div class="col-md-3 col">
+            <div class="card my-4 shadow rounded wow animated fadeIn " style=" height: 500px; " data-toggle="modal" data-target=".bd-example-modal-xl-5">
+                    <div class="w-100  position-relative" style="height:200px">
+                    <img src="./img/560651-PKSSNV-375.jpg" class="w-100 h-100 object-fit-cover object-position-center " alt="">
+            
+                    <h2 class="card-title text-light bg-dark position-absolute px-1 " style="transform: translate(-50%, -50%);top:50%;left:50%">
+                            資產活化
+            </h2>
+                    </div>
+                    <div class="card-body d-flex flex-column justify-content-center  align-items-center">
+            
+                    <div class="row flex-column justify-content-between align-items-center">
+                            <h5 class="col">投報分析</h5>
+                            <h5 class="col">設計規劃</h5>
+                            <h5 class="col">施工驗收</h5>
+                            <h5 class="col">房屋增值</h5></div>
+                    </div>
+                    </div>
+
+</div>
+<div class="col-md-3 col">
+        <div class="card my-4 shadow rounded wow animated fadeIn" style=" height: 500px; " data-toggle="modal" data-target=".bd-example-modal-xl-5">
+                <div class="w-100  position-relative" style="height:200px">
+                <img src="./img/14835.jpg" class="w-100 h-100 object-fit-cover object-position-center " alt="">
+        
+                <h2 class="card-title text-light bg-dark position-absolute px-1 " style="transform: translate(-50%, -50%);top:50%;left:50%">
+                        房屋出租
+        </h2>
+                </div>
+                <div class="card-body d-flex flex-column justify-content-center  align-items-center">
+        
+                <div class="row flex-column justify-content-between align-items-center">
+                        <h5 class="col">多元客服</h5>
+                        <h5 class="col">悠遊房卡</h5>
+                        <h5 class="col">代收垃圾</h5>
+                        <h5 class="col">修繕服務</h5></div>
+                </div>
+                </div>
+
+</div>
+<div class="col-md-3 col">
+        <div class="card my-4 shadow rounded wow animated fadeIn" style=" height: 500px; " data-toggle="modal" data-target=".bd-example-modal-xl-5">
+                <div class="w-100  position-relative" style="height:200px">
+                <img src="./img/63280.jpg" class="w-100 h-100 object-fit-cover object-position-center "  alt="">
+        
+                <h2 class="card-title text-light bg-dark position-absolute px-1 " style="transform: translate(-50%, -50%);top:50%;left:50%">
+                        修繕改造
+        </h2>
+                </div>
+                <div class="card-body d-flex flex-column justify-content-center  align-items-center">
+        
+                <div class="row flex-column justify-content-between align-items-center">
+                        <h5 class="col">房間佈置</h5>
+                        <h5 class="col">廣告攝影</h5>
+                        <h5 class="col">品牌快租</h5>
+                        <h5 class="col">租後服務</h5></div>
+                </div>
+                </div>
+
+</div>
+</div>
+    </div>
+<div id="section05" class="bg-picture3 ">
+    <div class="container vh-100 w-100 d-flex align-items-center justify-content-center ">
+        <div class="col d-flex align-items-center justify-content-center flex-column">
+                <h2 class="text-center pt-3 pb-5 ">
+                經營理念
+        </h2>    
+        <div class="bg-light text-center p-4 rounded" style="">
+        <p>信實、專業、熱忱、創新、共享</p>
+
+        <p>信實 - 誠信正直、用心經營，像家人般的服務每一個客戶。 </p>
+        <p>專業 - 讓客戶確信我們所提供的物件及服務具有卓越價值。 </p>
+        <p>熱忱 - 對於每一件事、案例、物件，盡力用心做到最好。 </p>
+        <p>創新 - 打造藍海創新、想像力的模式，壯闊發展。 </p>
+        <p>分享 - 與每一位客戶創造利潤共享，創造共贏。</p>
+</div></div>
+    </div>
+</div>
+
+
+                <!-- footer start -->
+                <footer class="d-flex w-100">
+                    <div class="container-fluid px-0 ">
+                        <div class="card-footer px-5">
+                            <p class="text-right  ml-auto mb-0">
+
+                                © 2019 creative for 朱軒 , 泰山職訓局專題
+                            </p>
+                        </div>
+                    </div>
+                </footer>
+                <!-- footer end -->
+</div>
+<!-- jquery 載入 -->
+<script src="./js/jquery-3.4.1.min.js"></script>
+<!-- bootstrap-->
+<script src="./js/popper.min.js"></script>
+<script src="./js/bootstrap.js"></script>
+<!-- Chart.js -->
+<script src="js/Chart.min.js"></script>
+        <!-- scrollpage -->
+        <!-- 
+            網站：https://codepen.io/hollow3d/pen/ENgvvX
+            easing 速率可以參考 https://easings.net/
+            解壓縮後 dist 目錄裡面，script.js 為滑動主程式，將其改成 scrollpage.js 
+            另外，還需要 jquery-3.3.1.min.js、jquery.easing.min.js
+        -->
+        <script src="js/jquery.easing.min.js"></script>
+        <script src="js/scrollpage.js"></script>
+
+
+        <!-- textyleF 首頁文字翻轉進來 -->
+<script src="js/textyleF.js"></script>
+        <!-- wow.js -->
+        <script src="js/wow.js"></script>
+<script>
+
+
+            // 加入 active
+            $('#index_navbar .nav-link').on('click', function() {
+                // 記錄第幾個 nav-link 的 index
+                let index = $('.nav-link').index(this);
+                if ($('#index_navbar .nav-link').hasClass('active')) {
+                    $('#index_navbar .nav-link').removeClass('active');
+                    $('#index_navbar .nav-link')
+                        .eq(index)
+                        .addClass('active');
+                } else {
+                    $('#index_navbar .nav-link')
+                        .eq(index)
+                        .addClass('active');
+                }
+            });
+
+
+            $(window).on('load',function(){
+				$('.textyleF.ex1').textyleF();
+				$('.textyleF.ex2').textyleF({
+					duration : 2000,
+					delay : 200,
+					easing : 'cubic-bezier(0.785, 0.135, 0.15, 0.86)',
+					callback : function(){
+						$(this).css({
+						color : '#10003b',
+						transition : '1s',
+						});
+						$('.textyleF.desc').css('opacity',1);
+					}
+					});
+            });
+            
+</script>
+
+                  <!-- wow.js -->
+        <script>
+  
+            new WOW().init();
+            var wow = new WOW({
+                boxClass: 'wow', // 要套用WOW.js縮需要的動畫class(預設是wow)
+                animateClass: 'animated', // 要"動起來"的動畫(預設是animated, 因此如果你有其他動畫library要使用也可以在這裡調整)
+                offset: 0, // 距離顯示多遠開始顯示動畫 (預設是0, 因此捲動到顯示時才出現動畫)
+                mobile: true, // 手機上是否要套用動畫 (預設是true)
+                live: true, // 非同步產生的內容是否也要套用 (預設是true, 非常適合搭配SPA)
+                callback: function(box) {
+                    // 當每個要開始時, 呼叫這裡面的內容, 參數是要開始進行動畫特效的element DOM
+                },
+                scrollContainer: null, // 可以設定成只套用在某個container中捲動才呈現, 不設定就是整個視窗
+            });
+            wow.init();
+        </script>
+
+</body>
+
+</html>

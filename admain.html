@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+body {
+    margin: 0;
+}
+.bar {
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    padding: 10px 10px 10px 10px;
+    width: 100vw;
+    height: 45px;
+    background: #5760b2;
+}
+.logo {
+    max-width: 250px;
+    height: 40px;
+}
+.user {
+    width: 100px;
+    padding: 10px 10px 10px 10px;
+}
+.menu {
+    position: fixed;
+    top: 65px;
+    left: 0vw;
+    width: 150px;
+    background: #c9d9cb;
+    box-shadow: 1px 1px 3px #000;
+}
+.menu ul {
+    margin-top: 0px;
+    padding-left:10px; 
+    list-style: none;
+}
+.menu ul>li{
+    margin: 10px auto;
+}
+.main{
+    margin:auto;
+    width:75vw; 
+    height: 700px;
+background: yellow;
+padding: 10px;
+
+}
+
+    </style>
+</head>
+<body>
+    <div class="bar">
+        <img  class="logo" src="https://picsum.photos/500/40" alt="">
+        <span class="user">使用者</span>
+    </div>
+    <div class="menu"><ul>
+        <li>首頁</li> 
+        <li>員工功能<ul><li>個人基本資料</li><li>自選評量</li><li>受評結果</li></ul></li> 
+        <li>主管功能<ul>審核評量下屬<li>查看審核評量下屬</li><li></li><li>部門整體結果</li><li>部門員工個別結果</li> </ul></li>
+        <li>人資功能<ul><li>所有員工列表</li></ul></li> 
+        <li>系統設定<ul><li>參數設定</li> <li>權限群組設定</li> <li>員工權限設定</li> <li>公告欄管理</li></ul></li>
+        </ul>
+    </div>
+
+    <div class="main"><?php include_once($mainzone."php")?></div>
+</body>
+</html>
